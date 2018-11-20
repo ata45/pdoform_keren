@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="assets/css/mycss.css">
 </head>
 <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="https://www.malasngoding.com">Malas Ngoding</a>
+				<a class="navbar-brand">Nani</a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="https://www.malasngoding.com">Home</a></li>
