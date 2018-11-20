@@ -1,6 +1,7 @@
 <?php
     header('Location: view.php');
-    include $_SERVER['DOCUMENT_ROOT']."/pdoform/assets/database/connection.php";
+    include ("assets/database/connection.php");
+    // include $_SERVER['DOCUMENT_ROOT']."/pdoform/assets/database/connection.php";
 
     $fn = $_POST['full_name'];
     $sn = $_POST['street'];
