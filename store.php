@@ -1,5 +1,5 @@
 <?php
-    header('Location: view.php');
+    header('Location: index.php');
     include ("assets/database/connection.php");
     // include $_SERVER['DOCUMENT_ROOT']."/pdoform/assets/database/connection.php";
 
