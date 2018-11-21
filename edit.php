@@ -21,6 +21,23 @@
     <link rel="stylesheet" href="assets/css/mycss.css">
 </head>
 <body>
+<nav class="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand">Nani</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="index.php">Home</a></li>
+				<li><a href="form.php">Tambah</a></li>
+				<li><a href="#">Tentang Kami</a></li>
+				<li><a href="#">Kontak</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+			<li><a href="#"><span class="glyphicon glyphicon-user"></span> Daftar</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			</ul>
+		</div>
+	</nav>
     <div class="container">
         <h3 class="mt-3 mb-3">Form Edit Biodata</h3>
         <form action="update.php" method="post">
