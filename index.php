@@ -1,5 +1,11 @@
 <?php
     include ("assets/database/connection.php");
+    // include $_SERVER['DOCUMENT_ROOT']."/pdoform/assets/database/connection.php";
+
+    $sql = 'SELECT * FROM biodata';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $bios = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -13,54 +19,38 @@
     <link rel="stylesheet" href="assets/css/mycss.css">
 </head>
 <body>
-  <nav class="navbar">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand">Nani</a>
-			</div>
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="https://www.malasngoding.com">Home</a></li>
-				<li><a href="#">Profil</a></li>
-				<li><a href="#">Tentang Kami</a></li>
-				<li><a href="#">Kontak</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-			<li><a href="#"><span class="glyphicon glyphicon-user"></span> Daftar</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			</ul>
-		</div>
-	</nav>
     <div class="container">
-        <h3 class="mt-3 mb-3">Form Input Biodata</h3>
-        <form action="store.php" method="post">
-            <div class="form-group">
-                <label for="inputName">Nama Lengkap</label>
-                <input type="text" class="form-control" id="inputName" placeholder="Nama Lengkap" name="full_name" autofocus>
-            </div>
-            <div class="form-group">
-                <label for="inputAddress">Alamat</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Nama Jalan dan Nomornya" name="street">
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputCity">Kota/Kabupaten</label>
-                    <input type="text" class="form-control" id="inputCity" placeholder="Kota atau Kabupaten" name="city">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="inputProvince">Province</label>
-                    <input type="text" class="form-control" id="inputProvince" placeholder="Provinsi" name="province">
-                </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Kode Pos</label>
-                    <input type="text" class="form-control" id="inputZip" placeholder="Ex: 45556" name="postal_code">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="inputContact">Kontak</label>
-                <input type="text" class="form-control" id="inputContact" placeholder="Nomor Kontak" name="contact">
-            </div>
-            <button type="submit" class="btn btn-primary">Simpan</button>
-        </form>
+        <h3 class="mt-3 mb-3">Tabel Biodata</h3>
+        <div class="table-responsive">
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope='col'>ID</th>
+                        <th scope='col'>NAMA LENGKAP</th>
+                        <th scope='col'>KONTAK</th>
+                        <th scope='col'>AKSI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                    foreach($bios as $bio){
+                ?>
+                    <tr>
+                        <th scope='row'><a href="detail.php?id=<?php echo $bio->id; ?>"><?php echo $bio->id; ?></a></th>
+                        <td><?php echo $bio->full_name; ?></td>
+                        <td><?php echo $bio->contact; ?></td>
+                        <td>
+                            <a href="edit.php?id=<?php echo $bio->id; ?>">Ubah</a>
+                            <a href="delete.php?id=<?php echo $bio->id; ?>">Hapus</a>
+                        </td>
+                    </tr>
+                <?php
+                    }
+                ?>
+                </tbody>
+            </table>
+        </div>
+        <a href="form.php">Tambah</a>
     </div>
 </body>
 </html>
