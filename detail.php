@@ -49,6 +49,12 @@
                 <p class="card-text"><?php echo $bio->contact; ?></p>
             </div>
         </div>
+	<a style="color:white;" href="edit.php?id=<?php echo $bio->id; ?>">
+                        <button type="button" class="btn btn-primary">Ubah</button>
+                            </a>
+                            <a style="color:white;" href="delete.php?id=<?php echo $bio->id; ?>">
+                            <button type="button" class="btn btn-danger">Hapus</button>
+                            </a>
     </div>
 </body>
 </html>
