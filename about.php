@@ -28,7 +28,7 @@
       </ul>
     </div>
   </nav>
-  <div class="card-deck">
+  <div class="card-deck" style="margin-top: 20px">
     <div class="col-md-4">
       <div class="card" style="width:400px">
         <img class="card-img-top" src="assets/images/kfc.png" alt="Card image">
@@ -60,7 +60,7 @@
       </div>
     </div>
   </div>
-  <div class="card-deck">
+  <div class="card-deck" style="margin-top: 20px">
     <div class="col-md-4">
       <div class="card" style="width:400px">
         <img class="card-img-top" src="assets/images/kfc.png" alt="Card image">
