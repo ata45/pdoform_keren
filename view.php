@@ -106,7 +106,7 @@ $bios = $stmt->fetchAll();
         //$get_jumlah = $a->fetchAll();
 
         $jumlah_page = ceil($a / $limit); // Hitung jumlah halamannya
-        $jumlah_number = 2; // Tentukan jumlah link number sebelum dan sesudah page yang aktif
+        $jumlah_number = 4; // Tentukan jumlah link number sebelum dan sesudah page yang aktif
         $start_number = ($page > $jumlah_number)? $page - $jumlah_number : 1; // Untuk awal link number
         $end_number = ($page < ($jumlah_page - $jumlah_number))? $page + $jumlah_number : $jumlah_page; // Untuk akhir link number
 
