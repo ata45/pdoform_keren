@@ -27,7 +27,7 @@
           <a class="nav-link" href="view.php">Lihat Data</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="about.php">About</a>
         </li>
       </ul>
     </div>
